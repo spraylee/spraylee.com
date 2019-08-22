@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <mo-page>
     <div class="stage" @click="showAnime">
       <div class="stage-bg">
         <div class="stage-bg-cell" v-for="(item, i) in stage" :key="i"></div>
@@ -16,25 +16,27 @@
         </template>
       </div>
     </div>
-  </div>
+  </mo-page>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import { createList } from '../../utils/createList'
-import anime from 'animejs'
-let control: null | anime.AnimeInstance = null
+import Vue from "vue";
+import { createList } from "../../utils/createList";
+import anime from "animejs";
+import moPage from "../mo/index.vue";
+let control: null | anime.AnimeInstance = null;
 export default Vue.extend({
+  components: { moPage },
   data() {
     return {
       stage: Object.freeze(createList(18 * 18, i => 0)),
       cellTable: createList(19, i => createList(19, i => 0)),
       isMounted: false,
       cellSize: 25
-    }
+    };
   },
   mounted() {
-    this.isMounted = true
+    this.isMounted = true;
     // anime({
     //   targets: 'div',
     //   translateX: 250,
@@ -45,15 +47,15 @@ export default Vue.extend({
   },
   methods: {
     showAnime() {
-      control && control.restart()
+      control && control.restart();
       control = anime({
-        targets: ['.stage-bg-cell'],
+        targets: [".stage-bg-cell"],
         // scale: [1, 0.9, 1],
         // translateY: [0, -10, 0],
         // backgroundColor: ['#ccc', '#aaa', '#ccc'],
         scale: [
-          { value: 0.95, easing: 'easeOutSine', duration: 500 },
-          { value: 1, easing: 'easeInOutQuad', duration: 1200 }
+          { value: 0.95, easing: "easeOutSine", duration: 500 },
+          { value: 1, easing: "easeInOutQuad", duration: 1200 }
         ],
         // rotateY: [
         //   { value: 90, easing: 'easeOutSine', duration: 500 },
@@ -64,53 +66,54 @@ export default Vue.extend({
         //   { value: '#fff', easing: 'easeInOutQuad', duration: 1200 }
         // ],
         translateY: [
-          { value: -10, easing: 'easeOutSine', duration: 500 },
-          { value: 0, easing: 'easeInOutQuad', duration: 1200 }
+          { value: -10, easing: "easeOutSine", duration: 500 },
+          { value: 0, easing: "easeInOutQuad", duration: 1200 }
         ],
-        delay: anime.stagger(80, { grid: [18, 18], from: 'center' }),
+        delay: anime.stagger(80, { grid: [18, 18], from: "center" }),
         duration: 1800,
         round: 10
-      })
+      });
       anime({
-        targets: ['.cell'],
+        targets: [".cell"],
         // scale: [1, 0.9, 1],
         // translateY: [0, -10, 0],
         // backgroundColor: ['#ccc', '#aaa', '#ccc'],
         scale: [
-          { value: 0.95, easing: 'easeOutSine', duration: 500 },
-          { value: 1, easing: 'easeInOutQuad', duration: 1200 }
+          { value: 0.95, easing: "easeOutSine", duration: 500 },
+          { value: 1, easing: "easeInOutQuad", duration: 1200 }
         ],
         // rotateY: [
         //   { value: 90, easing: 'easeOutSine', duration: 500 },
         //   { value: 180, easing: 'easeInOutQuad', duration: 1200 }
         // ],
         backgroundColor: [
-          { value: '#000', easing: 'easeOutSine', duration: 500, step: 1 },
-          { value: '#ccc', easing: 'easeInOutQuad', duration: 1200, step: 1 }
+          { value: "#000", easing: "easeOutSine", duration: 500, step: 1 },
+          { value: "#ccc", easing: "easeInOutQuad", duration: 1200, step: 1 }
         ],
         translateY: [
-          { value: -10, easing: 'easeOutSine', duration: 500 },
-          { value: 0, easing: 'easeInOutQuad', duration: 1200 }
+          { value: -10, easing: "easeOutSine", duration: 500 },
+          { value: 0, easing: "easeInOutQuad", duration: 1200 }
         ],
-        delay: anime.stagger(80, { grid: [19, 19], from: 'center' }),
+        delay: anime.stagger(80, { grid: [19, 19], from: "center" }),
         duration: 1800,
         round: 10
-      })
+      });
     },
     getCellStyle(i: number, j: number) {
-      const bgCell = document.querySelector('.stage-bg-cell')
-      if (!bgCell) return
-      const width = +(window.getComputedStyle(bgCell).width || '0px').split('px')[0] + 1
-      console.log(`calc(50% - ${(9 - i) * width + 5}px)`)
+      const bgCell = document.querySelector(".stage-bg-cell");
+      if (!bgCell) return;
+      const width =
+        +(window.getComputedStyle(bgCell).width || "0px").split("px")[0] + 1;
+      console.log(`calc(50% - ${(9 - i) * width + 5}px)`);
       return {
-        width: this.cellSize + 'px',
-        height: this.cellSize + 'px',
+        width: this.cellSize + "px",
+        height: this.cellSize + "px",
         left: `calc(50% - ${(9 - j) * width + this.cellSize / 2}px)`,
         top: `calc(50% - ${(9 - i) * width + this.cellSize / 2}px)`
-      }
+      };
     }
   }
-})
+});
 </script>
 
 <style lang="less" scoped>
