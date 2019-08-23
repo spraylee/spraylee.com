@@ -1,39 +1,41 @@
 <template>
   <div class="page" id="mo-page" @click="e => onClick(e)">
-    <slot></slot>
+    <div class="page-inner">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import mojs from "@mojs/core";
-let burst: any = null;
+import Vue from 'vue'
+import mojs from '@mojs/core'
+let burst: any = null
 export default Vue.extend({
   props: {
-    color: { type: String, default: "#666" }
+    color: { type: String, default: '#666' }
   },
   data() {
-    return {};
+    return {}
   },
   mounted() {
     burst = new mojs.Burst({
-      parent: "#mo-page",
+      parent: '#mo-page',
       left: 0,
       top: 0,
       radius: { 0: 35 },
       count: 8,
       children: {
-        shape: "line",
+        shape: 'line',
         radius: 10,
         stroke: this.color,
-        easing: "quad.out",
-        strokeDasharray: "100%",
-        strokeDashoffset: { "-100%": "100%" },
-        fill: ["deeppink", "cyan", "yellow"],
+        easing: 'quad.out',
+        strokeDasharray: '100%',
+        strokeDashoffset: { '-100%': '100%' },
+        fill: ['deeppink', 'cyan', 'yellow'],
         strokeWidth: 4,
         duration: 2000
       }
-    });
+    })
   },
   methods: {
     onClick(e: any) {
@@ -42,10 +44,10 @@ export default Vue.extend({
       burst
         .tune({ x: e.pageX, y: e.pageY })
         .setSpeed(3)
-        .replay();
+        .replay()
     }
   }
-});
+})
 </script>
 
 <style scoped>
@@ -54,5 +56,10 @@ export default Vue.extend({
   overflow: hidden;
   height: 100vh;
   width: 100vw;
+}
+.page-inner {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: auto;
 }
 </style>
