@@ -8,16 +8,23 @@
         我是一名前端开发者，热衷于用代码驱动这个世界。闲暇时我会用代码去实现一些好玩有趣的东西。下面有我最近写的五子棋小游戏，自带简单的AI，感兴趣可以尝试下。
       </p>
       <div class="link">
-        <a href="http://go.spraylee.com" target="_blank" title="五子棋"><img src="~@/assets/go.png" alt=""/></a>
+        <a href="http://go.spraylee.com" target="_blank" title="五子棋"
+          ><img src="~@/assets/go.png" alt=""
+        /></a>
       </div>
       <p>
         如果你碰巧也喜欢前端、热衷于创造，或许我们可以一起交流下，你可以通过以下途径找到我。
       </p>
       <div class="link">
-        <a href="https://github.com/spraylee" target="_blank" title="https://github.com/spraylee"
+        <a
+          href="https://github.com/spraylee"
+          target="_blank"
+          title="https://github.com/spraylee"
           ><img src="~@/assets/github.png" alt=""
         /></a>
-        <a href="javascript:;" title="Spray-521"><img src="~@/assets/wechat.png" alt=""/></a>
+        <a href="javascript:;" title="Spray-521"
+          ><img src="~@/assets/wechat.png" alt=""
+        /></a>
       </div>
       <!-- <p>
       I like to write some thing fun. You can hava a try.
@@ -28,17 +35,17 @@
     <p>
       I like to write some thing fun. You can hava a try.
     </p> -->
-      <div class="beian">粤ICP备18038053号</div>
+      <a class="beian" href="https://beian.miit.gov.cn/">粤ICP备18038053号</a>
     </section>
   </mo-page>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import MoPage from '../mo/index.vue'
+import Vue from "vue";
+import MoPage from "../mo/index.vue";
 export default Vue.extend({
-  components: { MoPage }
-})
+  components: { MoPage },
+});
 </script>
 
 <style lang="less" scoped>
