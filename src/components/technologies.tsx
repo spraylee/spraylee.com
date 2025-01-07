@@ -153,7 +153,10 @@ function TechIcon({
 
 export default function Technologies() {
   return (
-    <section className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section
+      id="technologies"
+      className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    >
       {/* Background grid effect */}
       <div className="absolute inset-0 bg-grid-gray-900/[0.04] dark:bg-grid-white/[0.02] bg-[size:30px_30px]" />
       <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-white/90 dark:from-gray-900/50 dark:to-gray-900/90 backdrop-blur-[1px]" />

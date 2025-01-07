@@ -6,7 +6,10 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section
+      id="hero"
+      className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="lg:grid lg:grid-cols-12 lg:gap-8">
           <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
@@ -29,9 +32,9 @@ export default function Hero() {
               creative visualizations, I share experiments and ideas that make
               coding fun.
             </p>
-            <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left">
+            <div className="mt-8 flex justify-center lg:justify-start">
               <Button
-                className="w-full sm:w-auto flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10 group"
+                className="flex items-center justify-center px-8 py-3 text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10 group"
                 onClick={() =>
                   document
                     .getElementById("projects")
@@ -42,7 +45,10 @@ export default function Hero() {
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
-            <div className="mt-8 border-t border-gray-200 dark:border-gray-700 pt-6">
+            <div
+              id="technologies"
+              className="mt-8 border-t border-gray-200 dark:border-gray-700 pt-6"
+            >
               <div className="grid grid-cols-3 gap-4">
                 <div className="flex items-center group cursor-pointer">
                   <Code className="h-6 w-6 text-blue-500 transition-transform group-hover:scale-110" />

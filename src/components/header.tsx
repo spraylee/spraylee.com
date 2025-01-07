@@ -7,48 +7,57 @@ import { useTheme } from "next-themes";
 export default function Header() {
   const { theme, setTheme } = useTheme();
 
+  const scrollToSection = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 max-w-screen-2xl items-center">
-        <div className="mr-4 hidden md:flex">
-          <a className="mr-6 flex items-center space-x-2" href="/">
-            <span className="hidden font-bold sm:inline-block">Spray Lee</span>
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-950/80 backdrop-blur-sm">
+      <div className="container flex h-16 items-center justify-between">
+        <div className="flex gap-6 md:gap-10">
+          <a href="#" className="flex items-center space-x-2">
+            <span className="font-bold text-xl bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+              Spray Lee
+            </span>
           </a>
-          <nav className="flex items-center space-x-6 text-sm font-medium">
-            <a
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
-              href="#projects"
+          <nav className="hidden md:flex gap-6">
+            <button
+              onClick={() => scrollToSection("hero")}
+              className="text-sm font-medium text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-500 transition-colors"
+            >
+              Home
+            </button>
+            <button
+              onClick={() => scrollToSection("projects")}
+              className="text-sm font-medium text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-500 transition-colors"
             >
               Projects
-            </a>
-            <a
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
-              href="#about"
+            </button>
+            <button
+              onClick={() => scrollToSection("technologies")}
+              className="text-sm font-medium text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-500 transition-colors"
             >
-              About
-            </a>
-            <a
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
-              href="#contact"
+              Technologies
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-sm font-medium text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-500 transition-colors"
             >
               Contact
-            </a>
+            </button>
           </nav>
         </div>
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <nav className="flex items-center">
-            <Button
-              variant="ghost"
-              size="icon"
-              aria-label="Toggle theme"
-              className="w-9 px-0"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            >
-              <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <span className="sr-only">Toggle theme</span>
-            </Button>
-          </nav>
+        <div className="flex items-center gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="hover:bg-gray-100 dark:hover:bg-gray-800"
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          >
+            <SunIcon className="h-5 w-5 rotate-0 scale-100 transition-transform dark:-rotate-90 dark:scale-0" />
+            <MoonIcon className="absolute h-5 w-5 rotate-90 scale-0 transition-transform dark:rotate-0 dark:scale-100" />
+            <span className="sr-only">Toggle theme</span>
+          </Button>
         </div>
       </div>
     </header>
