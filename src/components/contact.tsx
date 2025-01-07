@@ -31,14 +31,12 @@ export default function Contact() {
             variant="outline"
             size="icon"
             className="border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800"
-            onClick={() =>
-              window.open("mailto:spray.lee@example.com", "_blank")
-            }
+            onClick={() => window.open("mailto:spraylee@qq.com", "_blank")}
           >
             <Mail className="h-5 w-5" />
             <span className="sr-only">Email</span>
           </Button>
-          <Button
+          {/* <Button
             variant="outline"
             size="icon"
             className="border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800"
@@ -48,7 +46,7 @@ export default function Contact() {
           >
             <Linkedin className="h-5 w-5" />
             <span className="sr-only">LinkedIn</span>
-          </Button>
+          </Button> */}
         </div>
       </div>
     </section>

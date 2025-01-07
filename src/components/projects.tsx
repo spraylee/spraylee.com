@@ -58,7 +58,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="group w-full flex flex-col overflow-hidden border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-blue-500/10"
+              className="group w-full flex flex-col overflow-hidden border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 transition-all duration-300 hover:shadow-xl dark:hover:shadow-2xl dark:hover:shadow-blue-500/10"
             >
               <CardHeader className="p-0">
                 <div className="overflow-hidden">
@@ -67,7 +67,7 @@ export default function Projects() {
                     alt={project.title}
                     width={100}
                     height={100}
-                    className="object-cover w-full aspect-square rounded-t-lg transition-transform duration-300 group-hover:scale-110"
+                    className="object-cover w-full aspect-square rounded-t-lg transition-transform duration-300"
                   />
                 </div>
               </CardHeader>
@@ -97,7 +97,7 @@ export default function Projects() {
                   className="border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
                 >
                   <ExternalLink className="mr-2 h-4 w-4" />
-                  Live Demo
+                  Website
                 </Button>
                 {project.githubLink && (
                   <Button
