@@ -17,9 +17,9 @@ const projects = [
   {
     title: "Gomoku AI",
     description:
-      "A deep learning-based Gomoku AI opponent, exploring machine learning in gaming. An open-source project open for collaboration.",
+      "A Gomoku AI opponent powered by Alpha-Beta pruning algorithm, featuring efficient game tree search and position evaluation. An open-source project exploring the elegance of traditional algorithms.",
     image: "/images/gomoku.jpg",
-    tags: ["React", "AI", "Game"],
+    tags: ["React", "Algorithm", "Game"],
     liveLink: "https://gomoku.example.com",
     githubLink: "https://github.com/spraylee/gomoku",
   },
