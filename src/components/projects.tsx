@@ -15,22 +15,22 @@ import Image from "next/image";
 
 const projects = [
   {
-    title: "Gomoku AI",
+    title: "Gomoku Game",
     description:
       "A Gomoku AI opponent powered by Alpha-Beta pruning algorithm, featuring efficient game tree search and position evaluation. An open-source project exploring the elegance of traditional algorithms.",
     image: "/images/gomoku.jpg",
     tags: ["React", "Algorithm", "Game"],
-    liveLink: "https://gomoku.example.com",
-    githubLink: "https://github.com/spraylee/gomoku",
+    liveLink: "https://go.spraylee.com",
+    githubLink: "https://github.com/spraylee/go",
   },
   {
-    title: "Tech Blog",
+    title: "2048 Game",
     description:
-      "Sharing programming insights, technical experiments, and creative project documentation. Focused on frontend innovation and creative coding.",
-    image: "/images/blog.jpg",
-    tags: ["Next.js", "MDX", "Tailwind CSS"],
-    liveLink: "https://blog.example.com",
-    githubLink: "https://github.com/spraylee/blog",
+      "An interactive 2048 puzzle game featuring both manual play and AI auto-play modes. The AI player uses expectimax algorithm to make optimal moves, achieving high scores consistently.",
+    image: "/images/2048.png",
+    tags: ["React", "TypeScript", "Algorithm"],
+    liveLink: "https://2048.spraylee.com",
+    // githubLink: "https://github.com/spraylee/2048",
   },
   {
     title: "Creative Weather",
@@ -54,7 +54,7 @@ export default function Projects() {
           Here are some of my favorite creative projects. Each one represents a
           fun exploration and a fusion of technology and creativity.
         </p>
-        <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3 place-items-start">
+        <div className="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3 place-items-stretch">
           {projects.map((project, index) => (
             <Card
               key={index}
@@ -65,9 +65,9 @@ export default function Projects() {
                   <Image
                     src={project.image}
                     alt={project.title}
-                    width={300}
-                    height={200}
-                    className="object-cover w-full h-48 rounded-t-lg transition-transform duration-300 group-hover:scale-110"
+                    width={100}
+                    height={100}
+                    className="object-cover w-full aspect-square rounded-t-lg transition-transform duration-300 group-hover:scale-110"
                   />
                 </div>
               </CardHeader>
@@ -99,14 +99,16 @@ export default function Projects() {
                   <ExternalLink className="mr-2 h-4 w-4" />
                   Live Demo
                 </Button>
-                <Button
-                  variant="outline"
-                  onClick={() => window.open(project.githubLink, "_blank")}
-                  className="border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
-                >
-                  <Github className="mr-2 h-4 w-4" />
-                  GitHub
-                </Button>
+                {project.githubLink && (
+                  <Button
+                    variant="outline"
+                    onClick={() => window.open(project.githubLink, "_blank")}
+                    className="border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
+                  >
+                    <Github className="mr-2 h-4 w-4" />
+                    GitHub
+                  </Button>
+                )}
               </CardFooter>
             </Card>
           ))}

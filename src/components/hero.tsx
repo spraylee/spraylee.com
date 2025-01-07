@@ -45,10 +45,7 @@ export default function Hero() {
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
-            <div
-              id="technologies"
-              className="mt-8 border-t border-gray-200 dark:border-gray-700 pt-6"
-            >
+            <div className="mt-8 border-t border-gray-200 dark:border-gray-700 pt-6">
               <div className="grid grid-cols-3 gap-4">
                 <div className="flex items-center group cursor-pointer">
                   <Code className="h-6 w-6 text-blue-500 transition-transform group-hover:scale-110" />

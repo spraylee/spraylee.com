@@ -154,8 +154,8 @@ function TechIcon({
 export default function Technologies() {
   return (
     <section
-      id="technologies"
       className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      id="technologies"
     >
       {/* Background grid effect */}
       <div className="absolute inset-0 bg-grid-gray-900/[0.04] dark:bg-grid-white/[0.02] bg-[size:30px_30px]" />
